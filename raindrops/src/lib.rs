@@ -1,6 +1,5 @@
 pub fn raindrops(n: i32) -> String {
     let mut out = String::new();
-
     if n % 3 == 0 {
         out.push_str("Pling");
     }
