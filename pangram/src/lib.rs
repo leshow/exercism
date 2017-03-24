@@ -8,5 +8,6 @@ pub fn is_pangram(sentence: &str) -> bool {
         .len() == 26
 }
 fn is_valid(c: char) -> bool {
-    b'a' <= (c as u8) && (c as u8) <= b'z'
+    let c = c as u8;
+    b'a' <= c && c <= b'z'
 }
