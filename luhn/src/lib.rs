@@ -1,4 +1,7 @@
 pub fn is_valid<S: AsRef<str>>(s: S) -> bool {
+    if s.as_ref().chars().any(|c| !c.is_digit(10) && c != ' ') {
+        return false;
+    }
     s.as_ref()
         .chars()
         .filter_map(|x| x.to_digit(10))
