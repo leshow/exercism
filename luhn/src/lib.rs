@@ -1,21 +1,25 @@
-pub fn is_valid<S: AsRef<str>>(s: S) -> bool {
-    if s.as_ref().chars().any(|c| !c.is_digit(10) && c != ' ') {
+pub fn is_valid(s: &str) -> bool {
+    if s.chars().filter(|c| c.is_digit(10)).count() <= 1 {
         return false;
     }
-    s.as_ref()
-        .chars()
-        .filter_map(|x| x.to_digit(10))
+    if s.chars().any(|c| !c.is_digit(10) && c != ' ') {
+        return false;
+    }
+
+    let sum = s.chars()
+        .filter_map(|c| c.to_digit(10))
         .rev()
         .enumerate()
-        .map(|(ind, digit)| {
-            let mut new_digit = digit;
-            if ind % 2 != 0 {
-                new_digit = digit * 2
+        .map(|(index, mut digit)| {
+            if index % 2 != 0 {
+                digit = digit * 2
             }
             if digit > 9 {
-                new_digit -= 9;
+                digit = digit - 9
             }
-            new_digit
+            digit
         })
-        .sum::<u32>() % 10 == 0
+        .sum::<u32>();
+
+    return sum % 10 == 0;
 }
