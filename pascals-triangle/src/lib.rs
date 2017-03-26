@@ -1,5 +1,5 @@
 pub struct PascalsTriangle {
-    rows: u32
+    rows: u32,
 }
 
 impl PascalsTriangle {
@@ -15,7 +15,7 @@ impl PascalsTriangle {
 
         for k in 0..x {
             let last = v[k as usize];
-            v.push(last * (x - k) / (k+1));
+            v.push(last * (x - k) / (k + 1));
         }
         return v;
     }
