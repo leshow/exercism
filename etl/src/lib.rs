@@ -8,7 +8,11 @@ pub fn transform(input: &BTreeMap<i32, Vec<String>>) -> BTreeMap<String, i32> {
     // }
     // res
     // we can do better:
-    input.iter()
-        .flat_map(|(score, list)| list.iter().map(move |word| (word.to_lowercase(), *score)))
+    input
+        .iter()
+        .flat_map(|(score, list)| {
+                      list.iter()
+                          .map(move |word| (word.to_lowercase(), *score))
+                  })
         .collect::<BTreeMap<_, _>>()
 }

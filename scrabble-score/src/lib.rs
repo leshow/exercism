@@ -1,9 +1,6 @@
 
 pub fn score(word: &str) -> u32 {
-    word.to_lowercase()
-        .chars()
-        .map(|c| value(c))
-        .sum()
+    word.to_lowercase().chars().map(value).sum()
 }
 fn value(c: char) -> u32 {
     match c {

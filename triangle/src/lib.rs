@@ -15,21 +15,12 @@ impl Triangle {
         Ok(Triangle { sides: input })
     }
     pub fn is_equilateral(&self) -> bool {
-        self.sides
-            .iter()
-            .collect::<BTreeSet<_>>()
-            .len() == 1
+        self.sides.iter().collect::<BTreeSet<_>>().len() == 1
     }
     pub fn is_isosceles(&self) -> bool {
-        self.sides
-            .iter()
-            .collect::<BTreeSet<_>>()
-            .len() == 2
+        self.sides.iter().collect::<BTreeSet<_>>().len() == 2
     }
     pub fn is_scalene(&self) -> bool {
-        self.sides
-            .iter()
-            .collect::<BTreeSet<_>>()
-            .len() == 3
+        self.sides.iter().collect::<BTreeSet<_>>().len() == 3
     }
 }

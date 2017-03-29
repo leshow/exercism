@@ -14,10 +14,7 @@ pub fn sing(s: u8, e: u8) -> String {
 }
 
 fn capitalize<'a>(string: &'a str) -> Cow<'a, str> {
-    if string.chars()
-           .nth(0)
-           .unwrap()
-           .is_numeric() {
+    if string.chars().nth(0).unwrap().is_numeric() {
         Cow::Borrowed(string)
     } else {
         let mut first = string.to_owned();
