@@ -13,7 +13,7 @@ const NUMERAL_MAP: [(usize, &'static str); 13] = [(1000, "M"),
                                                 (5, "V"),
                                                 (4, "IV"),
                                                 (1, "I")];
-struct Roman {
+pub struct Roman {
     count: usize
 }
 
@@ -36,11 +36,11 @@ impl fmt::Display for Roman {
         let mut sum = self.count;
         let mut res = String::new();
         for &(val, numeral) in NUMERAL_MAP.iter() {
-            let mut s = sum;
-            while s >=
-            let times = s / val;
-
+            while sum >= val {
+                sum = sum - val;
+                res.push_str(numeral);
+            }
         }
-        write!(f, "{}", res);
+        write!(f, "{}", res)
     }
 }
