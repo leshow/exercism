@@ -29,7 +29,25 @@
 ///  * Never output leading 0 digits. However, your function must be able to
 ///     process input with leading 0 digits.
 ///
+use std::collections::VecDeque;
+
+type Num = u32;
+
 #[allow(unused_variables)]
-pub fn convert(number: &[u32], from_base: u32, to_base: u32) -> Result<Vec<u32>, ()> {
-    unimplemented!()
+pub fn convert<T: AsRef<[Num]>>(number: T, from_base: Num, to_base: Num) -> Result<Vec<Num>, ()> {
+    let mut num = number
+        .as_ref()
+        .iter()
+        .rev()
+        .enumerate()
+        .map(|(i, a)| a * from_base.pow(i as Num))
+        .sum::<Num>();
+
+    let mut res = VecDeque::new();
+    while num >= 0 {
+        let r = num % to_base;
+        res.push_front(r);
+        num = num / to_base;
+    }
+    Ok(res.into())
 }
