@@ -1,7 +1,9 @@
-reorder_imports = true
-reorder_imported_names = true
-fn_args_layout = "Block"
-array_layout = "Block"
-where_style = "Rfc"
-generics_indent = "Block"
-
+unstable_features = true
+merge_imports = true
+merge_derives = true
+reorder_impl_items = true
+space_around_ranges = true
+use_field_init_shorthand = true
+use_try_shorthand = true
+format_doc_comments = true
+wrap_comments = true
