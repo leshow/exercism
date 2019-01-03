@@ -1,6 +1,4 @@
-fn main() {
-    println!("Hello, world!");
-}
+fn main() {}
 #[derive(PartialEq, Eq, Debug)]
 pub struct ListNode {
     pub val: i32,
