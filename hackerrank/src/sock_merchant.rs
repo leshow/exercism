@@ -1,6 +1,8 @@
-// Enter your code here 
-use std::io::{self, BufRead};
-use std::collections::HashSet;
+// Enter your code here
+use std::{
+    collections::HashSet,
+    io::{self, BufRead},
+};
 
 fn get_pairs(colors: Vec<usize>, socks: usize) -> usize {
     let mut set = HashSet::new();
@@ -21,8 +23,15 @@ fn main() {
     let mut iter = stdin.lock().lines();
 
     let socks = iter.next().unwrap().unwrap().parse::<usize>().unwrap();
-    let colors = iter.next().unwrap().unwrap().trim_right().split(" ").map(|x| x.parse::<usize>()).collect::<Result<Vec<usize>, _>>().unwrap();
-    
+    let colors = iter
+        .next()
+        .unwrap()
+        .unwrap()
+        .trim_end()
+        .split(' ')
+        .map(|x| x.parse::<usize>())
+        .collect::<Result<Vec<usize>, _>>()
+        .unwrap();
+
     print!("{}", get_pairs(colors, socks));
 }
-
