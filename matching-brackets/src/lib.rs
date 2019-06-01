@@ -6,24 +6,15 @@ pub fn brackets_are_balanced(string: &str) -> bool {
     for &c in input {
         match c {
             b'(' | b'{' | b'[' => stack.push(c),
-            b')' | b'}' | b']' => {
-                if let Some(s) = stack.pop() {
-                    if inverse(c) != s {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
-            }
-            _ => {
-                continue;
-            }
+            b')' | b'}' | b']' => match stack.pop() {
+                Some(s) if inverse(c) != s => return false,
+                Some(_) => continue,
+                _ => return false,
+            },
+            _ => continue,
         }
     }
-    if !stack.is_empty() {
-        return false;
-    }
-    true
+    stack.is_empty()
 }
 
 pub fn inverse(b: u8) -> u8 {
