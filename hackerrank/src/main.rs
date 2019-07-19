@@ -5,6 +5,7 @@ mod prize_draw;
 mod sock_merchant;
 mod square_digits;
 mod acm_icpc_team;
+mod phantom_test;
 
 fn main() {
     println!("Hello, world!");
