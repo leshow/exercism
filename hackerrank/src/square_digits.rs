@@ -8,7 +8,7 @@ fn square_digits(mut num: u32) -> u32 {
         let m = num % 10;
         num /= 10;
         let sq = m.pow(2);
-        let digits = (res as f32).log(10 as f32).floor() as u32;
+        let digits = (res as f32).log(10_f32).floor() as u32;
         let ten = 10_u32.pow(1 + digits);
         res += sq * ten;
     }
