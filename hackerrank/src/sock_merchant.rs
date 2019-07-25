@@ -4,7 +4,7 @@ use std::{
     io::{self, BufRead},
 };
 
-fn get_pairs(colors: Vec<usize>, socks: usize) -> usize {
+fn get_pairs(colors: Vec<usize>, _socks: usize) -> usize {
     let mut set = HashSet::new();
     let mut pairs = 0;
     for sock in &colors {

@@ -15,7 +15,7 @@ fn dir_reduc(arr: &[Direction]) -> Vec<Direction> {
             acc
         } else {
             let head = acc.last().unwrap();
-            if invert(&head) == d {
+            if invert(*head) == d {
                 acc
             } else {
                 acc.push(d);
@@ -25,7 +25,7 @@ fn dir_reduc(arr: &[Direction]) -> Vec<Direction> {
     })
 }
 
-fn invert(a: &Direction) -> Direction {
+fn invert(a: Direction) -> Direction {
     match a {
         NORTH => SOUTH,
         SOUTH => NORTH,
@@ -38,7 +38,7 @@ fn dir_reduc2(arr: &[Direction]) -> Vec<Direction> {
     let mut dir = Vec::new();
     for d in arr {
         match dir.last() {
-            Some(d2) if invert(&d2) == *d => {
+            Some(d2) if invert(*d2) == *d => {
                 dir.pop();
             }
             _ => {

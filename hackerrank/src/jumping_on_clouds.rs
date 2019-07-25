@@ -16,7 +16,7 @@ fn jump_clouds(c: &[u8], n: usize) -> usize {
     jumps - 1
 }
 
-fn main() -> Result<(), Box<Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     let stdin = io::stdin();
     let mut stditer = stdin.lock().lines();
     let n = stditer.next().unwrap()?.parse::<usize>()?;
@@ -28,7 +28,7 @@ fn main() -> Result<(), Box<Error>> {
 
     let jumps = jump_clouds(&bin, n);
     println!("{}", jumps);
-    io::stdout().flush();
+    io::stdout().flush().ok();
 
     Ok(())
 }
