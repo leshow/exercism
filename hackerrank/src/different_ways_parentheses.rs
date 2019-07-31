@@ -46,7 +46,9 @@ fn parse(input: &[char]) -> Vec<AST> {
         }
     }
     if res.is_empty() {
-        res.push(AST::Num(input.parse::<i32>().unwrap()));
+        res.push(AST::Num(
+            input.iter().collect::<String>().parse::<i32>().unwrap(),
+        ));
     }
     res
 }
@@ -96,4 +98,44 @@ impl AST {
 fn test_compute() {
     let ans = diff_ways_to_compute("2*3-4*5".to_string());
     assert_eq!(&ans[..], &[-34, -10, -14, -10, 10]);
+}
+
+// Alternate solution w/o AST
+fn diff_ways_2(input: String) -> Vec<i32> {
+    let chars: Vec<char> = input.chars().collect::<Vec<_>>();
+    parse_2(&chars)
+}
+
+fn parse_2(input: &[char]) -> Vec<i32> {
+    let mut r = Vec::new();
+    if input.is_empty() {
+        return r;
+    }
+    for i in 0..input.len() {
+        if input[i].is_digit(10) {
+            continue;
+        } else {
+            let op = input[i];
+            let left = parse_2(&input[0..i]);
+            let right = parse_2(&input[(i + 1)..]);
+            for a in &left {
+                for b in &right {
+                    r.push(eval(op, *a, *b));
+                }
+            }
+        }
+    }
+    if r.is_empty() {
+        r.push(input.iter().collect::<String>().parse::<i32>().unwrap());
+    }
+    r
+}
+
+fn eval(op: char, a: i32, b: i32) -> i32 {
+    match op {
+        '-' => a - b,
+        '*' => a * b,
+        '+' => a + b,
+        _ => panic!(),
+    }
 }
