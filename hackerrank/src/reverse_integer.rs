@@ -1,3 +1,4 @@
+/// leetcode
 /// 7. Reverse Integer
 /// Easy
 ///
@@ -26,7 +27,12 @@
 fn reverse(num: i32) -> i32 {
     let mut res: Option<i32> = Some(0);
     let mut neg = false;
-    let mut num = if num < 0 { neg = true; -num } else { num };
+    let mut num = if num < 0 {
+        neg = true;
+        -num
+    } else {
+        num
+    };
     while num != 0 {
         let digits = (num as f32).log10() as u32;
         let modulus = num % 10;

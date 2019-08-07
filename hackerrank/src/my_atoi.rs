@@ -1,3 +1,4 @@
+/// leetcode
 /// Implement atoi which converts a string to an integer.
 ///
 /// The function first discards as many whitespace characters as necessary until
@@ -22,7 +23,6 @@
 /// integers within the 32-bit signed integer range: [−231,  231 − 1]. If the
 /// numerical value is out of the range of representable values, INT_MAX (231 −
 /// 1) or INT_MIN (−231) is returned.
-///
 pub fn my_atoi(str: String) -> i32 {
     let mut num: Option<i32> = Some(0);
     let mut neg = false;

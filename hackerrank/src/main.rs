@@ -13,6 +13,7 @@ mod reverse_integer;
 mod scanner;
 mod sock_merchant;
 mod square_digits;
+mod available_captures;
 
 fn main() {
     println!("Hello, world!");
