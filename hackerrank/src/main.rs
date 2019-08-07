@@ -1,9 +1,11 @@
 #![allow(dead_code)]
 mod acm_icpc_team;
 mod angry_prof;
+mod available_captures;
 mod delete_columns;
 mod different_ways_parentheses;
 mod directionreduction;
+mod insert_bst;
 mod jumping_on_clouds;
 mod my_atoi;
 mod number_of_recent_calls;
@@ -13,7 +15,6 @@ mod reverse_integer;
 mod scanner;
 mod sock_merchant;
 mod square_digits;
-mod available_captures;
 
 fn main() {
     println!("Hello, world!");
