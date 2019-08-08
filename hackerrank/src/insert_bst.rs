@@ -38,24 +38,23 @@ impl TreeNode {
 ///     1   3
 /// And the value to insert: 5
 pub fn insert_into_bst(
-    mut root: Option<Rc<RefCell<TreeNode>>>,
+    root: Option<Rc<RefCell<TreeNode>>>,
     val: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    insert(&mut root, val);
-    root
-}
-
-fn insert(root: &mut Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-    match root {
-        Some(node) => {
-            let mut nref = node.borrow_mut();
-            if nref.val > val {
-                nref.left = insert(&mut nref.left, val);
-            } else if nref.val < val {
-                nref.right = insert(&mut nref.right, val);
+    fn insert(root: &Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        match root {
+            Some(node) => {
+                let mut nref = node.borrow_mut();
+                if nref.val > val {
+                    nref.left = insert(&nref.left, val);
+                } else if nref.val < val {
+                    nref.right = insert(&nref.right, val);
+                }
+                Some(node.clone())
             }
-            Some(node.clone())
+            None => Some(Rc::new(RefCell::new(TreeNode::new(val)))),
         }
-        None => Some(Rc::new(RefCell::new(TreeNode::new(val)))),
     }
+    insert(&root, val);
+    root
 }
