@@ -13,6 +13,7 @@ mod phantom_test;
 mod prize_draw;
 mod reverse_integer;
 mod scanner;
+mod simple_text_editor;
 mod sock_merchant;
 mod square_digits;
 
