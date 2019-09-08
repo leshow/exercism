@@ -16,6 +16,7 @@ mod phantom_test;
 mod plus_one;
 mod prize_draw;
 mod reverse_integer;
+mod same_tree;
 mod scanner;
 mod simple_text_editor;
 mod sock_merchant;
