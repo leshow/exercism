@@ -1,3 +1,4 @@
+/// https://leetcode.com/problems/climbing-stairs/
 pub fn climb_stairs_dp(n: i32) -> i32 {
     let mut t = vec![0, 1, 2];
     let n = n as usize;
@@ -7,7 +8,8 @@ pub fn climb_stairs_dp(n: i32) -> i32 {
     t.reserve(n);
     for i in 3..=n {
         t.push(t[i - 1] + t[i - 2]);
-    }    t[n]
+    }
+    t[n]
 }
 // recursive
 pub fn climb_stairs(n: i32) -> i32 {
