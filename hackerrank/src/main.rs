@@ -19,6 +19,7 @@ mod number_of_recent_calls;
 mod phantom_test;
 mod plus_one;
 mod prize_draw;
+mod relative_sorted_array;
 mod reverse_integer;
 mod same_tree;
 mod scanner;
@@ -26,6 +27,7 @@ mod simple_text_editor;
 mod sock_merchant;
 mod square_digits;
 mod two_city_sched;
+mod univalued_binary_tree;
 
 fn main() {
     println!("Hello, world!");
