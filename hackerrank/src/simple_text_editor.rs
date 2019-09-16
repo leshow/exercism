@@ -59,7 +59,7 @@ where
                 });
             }
             Op::Print { idx } => {
-                writeln!(out, "{}", s[idx - 1] as char);
+                writeln!(out, "{}", s[idx - 1] as char).expect("failed to write");
             }
             Op::Undo => {
                 if let Some(last_s) = stack.pop() {
