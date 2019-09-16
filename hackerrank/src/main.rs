@@ -25,6 +25,7 @@ mod scanner;
 mod simple_text_editor;
 mod sock_merchant;
 mod square_digits;
+mod two_city_sched;
 
 fn main() {
     println!("Hello, world!");
