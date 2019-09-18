@@ -28,6 +28,8 @@ mod simple_text_editor;
 mod sock_merchant;
 mod sort_char_by_frequency;
 mod square_digits;
+mod sub_k_diff;
+mod top_k_freq;
 mod two_city_sched;
 mod univalued_binary_tree;
 
