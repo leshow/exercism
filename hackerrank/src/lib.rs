@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 mod acm_icpc_team;
 mod angry_prof;
+mod arithmetic_slices;
 mod array_to_bst;
 mod available_captures;
 mod binary_strings;
