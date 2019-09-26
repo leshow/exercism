@@ -12,6 +12,7 @@ mod climbing_stairs;
 mod delete_columns;
 mod different_ways_parentheses;
 mod directionreduction;
+mod find_common_chars;
 mod find_difference;
 mod find_duplicates;
 mod first_unique_char_in_string;
