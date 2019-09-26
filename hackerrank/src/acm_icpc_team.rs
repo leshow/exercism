@@ -2,7 +2,7 @@
 use std::cmp::{max, min};
 use std::{
     error::Error,
-    io::{stdin, stdout, BufWriter, Write},
+    io::{stdout, BufWriter, Write},
 };
 
 use crate::scanner::*;
@@ -14,7 +14,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let m = scan.next::<usize>();
     let mut topics = vec![];
     (0..n).for_each(|_| topics.push(scan.next::<String>()));
-    let (total, all) = get_topics(topics, n, m)?;
+    let (total, all) = get_topics(topics, n)?;
     writeln!(out, "{}", total)?;
     writeln!(out, "{}", all)?;
     Ok(())
@@ -58,7 +58,7 @@ fn main() -> Result<(), Box<dyn Error>> {
  ** }
  ** ```
  **/
-fn get_topics(topics: Vec<String>, n: usize, m: usize) -> Result<(usize, usize), Box<dyn Error>> {
+fn get_topics(topics: Vec<String>, n: usize) -> Result<(usize, usize), Box<dyn Error>> {
     let mut max_topics = 0;
     let mut total_max = 0;
 

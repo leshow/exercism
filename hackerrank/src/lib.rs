@@ -5,6 +5,7 @@ mod arithmetic_slices;
 mod array_to_bst;
 mod available_captures;
 mod binary_strings;
+mod car_pooling;
 mod climbing_stairs;
 mod delete_columns;
 mod different_ways_parentheses;
