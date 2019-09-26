@@ -2,18 +2,25 @@
 // Hard
 // Given an array A of positive integers, call a (contiguous, not necessarily
 // distinct) subarray of A good if the number of different integers in that
-// subarray is exactly K. (For example, [1,2,3,1,2] has 3 different integers: 1,
-// 2, and 3.) Return the number of good subarrays of A.
+// subarray is exactly K.
+
+// (For example, [1,2,3,1,2] has 3 different integers: 1, 2, and 3.)
+
+// Return the number of good subarrays of A.
+
 // Example 1:
+
 // Input: A = [1,2,1,2,3], K = 2
 // Output: 7
 // Explanation: Subarrays formed with exactly 2 different integers: [1,2],
-// [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2]. Example 2:
+// [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2].
+
+// Example 2:
+
 // Input: A = [1,2,1,3,4], K = 3
 // Output: 3
 // Explanation: Subarrays formed with exactly 3 different integers: [1,2,1,3],
 // [2,1,3], [1,3,4].
-
 // (i looked at the solution)
 use std::{
     collections::{HashMap, HashSet},
@@ -109,4 +116,17 @@ pub fn naive(arr: Vec<i32>, k: usize) -> usize {
         }
     }
     ret.len()
+}
+
+pub fn subarrays_with_k_distinct_naive(arr: Vec<i32>, k: i32) -> i32 {
+    let mut lists = Vec::new();
+    for i in 0..arr.len() {
+        for j in 1..=(arr.len() - i) {
+            lists.push(arr[i..(i + j)].to_vec());
+        }
+    }
+    lists
+        .into_iter()
+        .filter(|list| list.iter().collect::<HashSet<_>>().len() == k as usize)
+        .count() as i32
 }
