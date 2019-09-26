@@ -4,6 +4,7 @@ mod angry_prof;
 mod arithmetic_slices;
 mod array_to_bst;
 mod available_captures;
+mod base_neg2;
 mod binary_strings;
 mod car_pooling;
 mod climbing_stairs;
