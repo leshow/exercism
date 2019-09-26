@@ -14,12 +14,14 @@ mod directionreduction;
 mod find_difference;
 mod find_duplicates;
 mod first_unique_char_in_string;
+mod hamming_distance;
 mod insert_bst;
 mod intersection_of_two_arrays_ii;
 mod is_subsequence;
 mod jumping_on_clouds;
 mod majority_elements;
 mod my_atoi;
+mod number_1_bits;
 mod number_of_atoms;
 mod number_of_recent_calls;
 mod phantom_test;
@@ -37,7 +39,5 @@ mod sub_k_diff;
 mod top_k_freq;
 mod two_city_sched;
 mod univalued_binary_tree;
-
-fn main() {
-    println!("Hello, world!");
-}
+mod valid_anagram;
+mod product_of_array;
