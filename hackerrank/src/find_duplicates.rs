@@ -21,6 +21,7 @@ pub fn find_duplicates(nums: Vec<i32>) -> Vec<i32> {
         .collect::<Vec<_>>()
 }
 
+#[derive(Debug)]
 enum Form {
     Atom(String, usize),
     Comb(Vec<Form>, usize),
@@ -29,7 +30,7 @@ enum Form {
 fn combine(f: &Form, mut map: HashMap<String, usize>) -> HashMap<String, usize> {
     match f {
         Form::Atom(s, c) => {
-            map.entry(s.clone()).or_insert(*c);
+            *map.entry(s.clone()).or_insert(1) *= c;
             map
         }
         Form::Comb(formulas, c) => {
@@ -39,10 +40,23 @@ fn combine(f: &Form, mut map: HashMap<String, usize>) -> HashMap<String, usize> 
                 .collect::<Vec<HashMap<_, _>>>();
             for m in maps {
                 for (k, v) in m {
-                    map.entry(k).and_modify(|b| *b *= c * v);
+                    *map.entry(k).or_insert(v) *= c;
                 }
             }
             map
         }
     }
+}
+
+#[test]
+fn test_combine() {
+    use Form::*;
+    let f = Comb(
+        vec![
+            Atom("Mg".into(), 1),
+            Comb(vec![Atom("H".into(), 1), Atom("O".into(), 2)], 2),
+        ],
+        1,
+    );
+    let result = combine(&f, HashMap::new());
 }

@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 mod acm_icpc_team;
 mod angry_prof;
 mod arithmetic_slices;
@@ -22,7 +21,9 @@ mod intersection_of_two_arrays_ii;
 mod is_subsequence;
 mod jumping_on_clouds;
 mod majority_elements;
+mod minimum_add_to_make_parens_valid;
 mod my_atoi;
+mod num_unique_emails;
 mod number_1_bits;
 mod number_of_atoms;
 mod number_of_recent_calls;
@@ -39,6 +40,7 @@ mod sock_merchant;
 mod sort_char_by_frequency;
 mod square_digits;
 mod sub_k_diff;
+mod sum_of_distances;
 mod top_k_freq;
 mod two_city_sched;
 mod univalued_binary_tree;

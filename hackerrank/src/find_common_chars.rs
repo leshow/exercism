@@ -52,7 +52,6 @@ fn test_chars() {
 #[test]
 fn test_common() {
     let out = common_chars(["cool".into(), "lock".into(), "cook".into()].to_vec());
-    dbg!(&out);
     let expected = ['c', 'o'].to_vec();
     assert_eq!(out.len(), expected.len());
     for c in out {
