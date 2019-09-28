@@ -1,4 +1,4 @@
-fn num_unique_emails(emails: Vec<String>) -> usize {
+pub fn num_unique_emails(emails: Vec<String>) -> i32 {
     use std::collections::HashSet;
     let mut set = HashSet::new();
     for email in emails {
@@ -28,3 +28,4 @@ fn test_num_unique() {
         2
     );
 }
+

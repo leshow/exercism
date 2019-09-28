@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 mod acm_icpc_team;
 mod angry_prof;
 mod arithmetic_slices;
