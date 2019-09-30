@@ -1,8 +1,3 @@
-use std::{
-    collections::hash_map::DefaultHasher,
-    hash::{self, Hash, Hasher},
-};
-
 pub fn grep(haystack: &str, needle: &str) -> Vec<usize> {
     let mut ret = Vec::new();
     let k = needle.len();
