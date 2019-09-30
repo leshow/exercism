@@ -35,7 +35,7 @@ pub fn num_rook_captures(board: Vec<Vec<char>>) -> i32 {
         Some((i, j)) => {
             let mut count = 0;
             for n in (0..i).rev() {
-                if board[n][j] == 'b' {
+                if board[n][j] == 'B' {
                     break;
                 } else if board[n][j] == 'p' {
                     count += 1;
@@ -43,7 +43,7 @@ pub fn num_rook_captures(board: Vec<Vec<char>>) -> i32 {
                 }
             }
             for n in i..board.len() {
-                if board[n][j] == 'b' {
+                if board[n][j] == 'B' {
                     break;
                 } else if board[n][j] == 'p' {
                     count += 1;
@@ -51,7 +51,7 @@ pub fn num_rook_captures(board: Vec<Vec<char>>) -> i32 {
                 }
             }
             for n in (0..j).rev() {
-                if board[i][n] == 'b' {
+                if board[i][n] == 'B' {
                     break;
                 } else if board[i][n] == 'p' {
                     count += 1;
@@ -59,7 +59,7 @@ pub fn num_rook_captures(board: Vec<Vec<char>>) -> i32 {
                 }
             }
             for n in j..board[i].len() {
-                if board[i][n] == 'b' {
+                if board[i][n] == 'B' {
                     break;
                 } else if board[i][n] == 'p' {
                     count += 1;
