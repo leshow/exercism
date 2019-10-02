@@ -46,6 +46,7 @@ mod product_of_array;
 mod rabin_karp;
 mod relative_sorted_array;
 mod reverse_integer;
+mod reverse_only_letters;
 mod same_tree;
 mod scanner;
 mod simple_text_editor;
