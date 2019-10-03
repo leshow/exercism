@@ -31,6 +31,8 @@ mod largest_triangle_area;
 mod letter_case_permutation;
 mod longest_common_subsequence;
 mod majority_elements;
+mod maximum_binary_tree;
+mod maximum_sliding_window;
 mod min_ascii_delete_sum;
 mod minimum_add_to_make_parens_valid;
 mod minimum_size_subarray_sum;
