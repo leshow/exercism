@@ -33,6 +33,7 @@ mod longest_common_subsequence;
 mod majority_elements;
 mod min_ascii_delete_sum;
 mod minimum_add_to_make_parens_valid;
+mod minimum_size_subarray_sum;
 mod minimum_window_substring;
 mod missing_number;
 mod my_atoi;
