@@ -12,6 +12,7 @@ mod car_pooling;
 mod climbing_stairs;
 mod compare_strings_by_freq_of_smallest_char;
 mod counting_bits;
+mod daily_temperatures;
 mod delete_columns;
 mod different_ways_parentheses;
 mod directionreduction;
