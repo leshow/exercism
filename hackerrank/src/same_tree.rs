@@ -1,8 +1,8 @@
 // 100. Same Tree
 // Easy
-// Given two binary trees, write a function to check if they are the same or not.
-// Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
-// Example 1:
+// Given two binary trees, write a function to check if they are the same or
+// not. Two binary trees are considered the same if they are structurally
+// identical and the nodes have the same value. Example 1:
 // Input:     1         1
 //           / \       / \
 //          2   3     2   3
@@ -39,8 +39,7 @@ impl TreeNode {
         }
     }
 }
-use std::cell::RefCell;
-use std::rc::Rc;
+use std::{cell::RefCell, rc::Rc};
 pub fn is_same_tree(p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> bool {
     eq(&p, &q)
 }

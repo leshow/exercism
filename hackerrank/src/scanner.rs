@@ -2,7 +2,7 @@
 use std::{
     error::Error,
     io::{stdin, stdout, BufWriter, Write},
-    iter::Iterator
+    iter::Iterator,
 };
 
 #[derive(Default)]
@@ -22,4 +22,3 @@ impl Scanner {
         }
     }
 }
-

@@ -1,18 +1,18 @@
 // 451. Sort Characters By Frequency
 // Medium
-// Given a string, sort it in decreasing order based on the frequency of characters.
-// Example 1:
+// Given a string, sort it in decreasing order based on the frequency of
+// characters. Example 1:
 // Input:
 // "tree"
 // Output:
 // "eert"
 // Explanation:
 // 'e' appears twice while 'r' and 't' both appear once.
-// So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
+// So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid
+// answer.
 
 pub fn frequency_sort(s: String) -> String {
-    use std::collections::HashMap;
-    use std::{iter, str};
+    use std::{collections::HashMap, iter, str};
     let s = s.as_bytes();
     let map = s.iter().fold(HashMap::new(), |mut map, c| {
         *map.entry(c).or_insert(0) += 1;

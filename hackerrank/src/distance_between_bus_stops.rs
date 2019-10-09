@@ -14,7 +14,8 @@ pub fn distance_between_bus_stops(distance: Vec<i32>, start: i32, destination: i
     let mut destination = destination as usize;
     if start > destination {
         mem::swap(&mut start, &mut destination);
-    }    let sum1 = distance[start..destination].iter().sum();
+    }
+    let sum1 = distance[start..destination].iter().sum();
 
     let sum2 = distance[..start].iter().sum::<i32>() + distance[destination..].iter().sum::<i32>();
     cmp::min(sum1, sum2)

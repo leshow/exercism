@@ -1,12 +1,14 @@
 // 238. Product of Array Except Self
 // Medium
-// Given an array nums of n integers where n > 1,  return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
-// Example:
+// Given an array nums of n integers where n > 1,  return an array output such
+// that output[i] is equal to the product of all the elements of nums except
+// nums[i]. Example:
 // Input:  [1,2,3,4]
 // Output: [24,12,8,6]
 // Note: Please solve it without division and in O(n).
 // Follow up:
-// Could you solve it with constant space complexity? (The output array does not count as extra space for the purpose of space complexity analysis.)
+// Could you solve it with constant space complexity? (The output array does not
+// count as extra space for the purpose of space complexity analysis.)
 
 fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
     let mut nums: Vec<(i32, i32)> = nums.into_iter().map(|n| (n, 0)).collect::<Vec<_>>();

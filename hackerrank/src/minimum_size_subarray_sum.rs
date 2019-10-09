@@ -30,5 +30,6 @@ pub fn min_sub_array_len(s: i32, nums: Vec<i32>) -> i32 {
             left += 1;
         }
         right += 1;
-    }    cmp::max(0, len as i32)
+    }
+    cmp::max(0, len as i32)
 }

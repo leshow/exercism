@@ -1,10 +1,12 @@
 /// 868. Binary Gap
 /// Easy
-/// Given a positive integer N, find and return the longest distance between two consecutive 1's in the binary representation of N.
-/// If there aren't two consecutive 1's, return 0.
+/// Given a positive integer N, find and return the longest distance between two
+/// consecutive 1's in the binary representation of N. If there aren't two
+/// consecutive 1's, return 0.
 use std::cmp;
 
-// the way leetcode wants it 15 aka 0b1111 returns 1, I don't think this is correct
+// the way leetcode wants it 15 aka 0b1111 returns 1, I don't think this is
+// correct
 fn binary_gap(n: i32) -> i32 {
     let mut max = 0;
     let mut n = n;

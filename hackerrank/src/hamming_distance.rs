@@ -1,7 +1,8 @@
 // 461. Hamming Distance
 // Easy
 
-// The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
+// The Hamming distance between two integers is the number of positions at which
+// the corresponding bits are different.
 
 // Given two integers x and y, calculate the Hamming distance.
 
@@ -19,7 +20,8 @@
 // 4   (0 1 0 0)
 //        ↑   ↑
 
-// The above arrows point to positions where the corresponding bits are different.
+// The above arrows point to positions where the corresponding bits are
+// different.
 fn hamming_distance(x: i32, y: i32) -> i32 {
     let mut n = x ^ y;
     let mut count = 0;

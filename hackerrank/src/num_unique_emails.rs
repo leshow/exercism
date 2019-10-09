@@ -28,4 +28,3 @@ fn test_num_unique() {
         2
     );
 }
-

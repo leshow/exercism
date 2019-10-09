@@ -42,8 +42,7 @@ pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
 }
 
 pub fn max_sliding_window_queue(nums: Vec<i32>, k: i32) -> Vec<i32> {
-    use std::cmp;
-    use std::collections::VecDeque;
+    use std::{cmp, collections::VecDeque};
     if k == 1 || nums.is_empty() {
         return nums;
     }

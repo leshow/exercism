@@ -27,5 +27,6 @@ pub fn reverse_only_letters(s: String) -> String {
         } else {
             ret.push(c);
         }
-    }    ret
+    }
+    ret
 }
