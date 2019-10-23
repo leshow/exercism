@@ -40,6 +40,7 @@ mod max_consec_ones;
 mod maximum_binary_tree;
 mod maximum_sliding_window;
 mod min_ascii_delete_sum;
+mod min_index_sum_two_lists;
 mod minimum_add_to_make_parens_valid;
 mod minimum_size_subarray_sum;
 mod minimum_window_substring;
