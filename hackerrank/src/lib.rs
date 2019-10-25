@@ -11,6 +11,7 @@ mod binary_gap;
 mod binary_search;
 mod binary_strings;
 mod bst_iterator;
+mod can_make_palindrome_from_substring;
 mod car_pooling;
 mod climbing_stairs;
 mod compare_strings_by_freq_of_smallest_char;
