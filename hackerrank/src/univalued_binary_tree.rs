@@ -50,8 +50,7 @@ pub fn dfs(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     if root.is_none() {
         return true;
     }
-    let root = root.unwrap();
-    let mut stack = vec![root.clone()];
+    let mut stack = vec![root.unwrap()];
     while !stack.is_empty() {
         let node = stack.pop().unwrap();
         let node = node.borrow();
