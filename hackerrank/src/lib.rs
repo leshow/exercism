@@ -33,6 +33,7 @@ mod insert_bst;
 mod intersection_of_two_arrays_ii;
 mod is_subsequence;
 mod jewels_and_stones;
+mod judgle_circle;
 mod jumping_on_clouds;
 mod l4sum;
 mod largest_triangle_area;
