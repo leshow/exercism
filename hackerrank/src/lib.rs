@@ -43,6 +43,8 @@ mod majority_elements;
 mod max_consec_ones;
 mod maximum_binary_tree;
 mod maximum_sliding_window;
+mod merge_intervals;
+mod min_absolute_difference;
 mod min_ascii_delete_sum;
 mod min_cost_tickets;
 mod min_index_sum_two_lists;
