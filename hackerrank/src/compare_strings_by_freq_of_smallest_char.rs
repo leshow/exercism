@@ -23,8 +23,6 @@
 // Explanation: On the first query only f("bbb") < f("aaaa"). On the second
 // query both f("aaa") and f("aaaa") are both > f("cc").
 
-use std::{cmp, collections::HashMap};
-
 pub fn num_smaller_by_frequency(queries: Vec<String>, words: Vec<String>) -> Vec<i32> {
     if queries.is_empty() || words.is_empty() {
         return vec![];

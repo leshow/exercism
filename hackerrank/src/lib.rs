@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 mod a_test;
 mod acm_icpc_team;
 mod angry_prof;
@@ -15,6 +16,8 @@ mod car_pooling;
 mod climbing_stairs;
 mod coin_change;
 mod comb_sum_iv;
+mod combination_sum;
+mod combination_sum_iii;
 mod compare_strings_by_freq_of_smallest_char;
 mod counting_bits;
 mod daily_temperatures;

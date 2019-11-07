@@ -14,13 +14,10 @@
 
 pub fn num_jewels_in_stones(j: String, s: String) -> i32 {
     use std::collections::HashMap;
-    let jewels = j.chars().into_iter().fold(HashMap::new(), |mut map, c| {
+    let jewels = j.chars().fold(HashMap::new(), |mut map, c| {
         *map.entry(c).or_insert(0) += 1;
         map
     });
 
-    s.chars()
-        .filter(|c| jewels.contains_key(c))
-        .collect::<Vec<_>>()
-        .len() as i32
+    s.chars().filter(|c| jewels.contains_key(c)).count() as i32
 }

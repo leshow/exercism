@@ -1,4 +1,3 @@
-#![feature(box_into_raw_non_null)]
 // 377. Combination Sum IV
 // Medium
 // Given an integer array with all positive numbers and no duplicates, find the

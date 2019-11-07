@@ -41,14 +41,15 @@ pub fn insert_into_bst(
     root: Option<Rc<RefCell<TreeNode>>>,
     val: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
+    use std::cmp::Ordering;
     fn insert(root: &Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
         match root {
             Some(node) => {
                 let mut nref = node.borrow_mut();
-                if nref.val > val {
-                    nref.left = insert(&nref.left, val);
-                } else if nref.val < val {
-                    nref.right = insert(&nref.right, val);
+                match nref.val.cmp(&val) {
+                    Ordering::Greater => nref.left = insert(&nref.left, val),
+                    Ordering::Less => nref.right = insert(&nref.right, val),
+                    Ordering::Equal => {}
                 }
                 Some(node.clone())
             }

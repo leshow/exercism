@@ -25,7 +25,7 @@ fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
 }
 
 fn product_except_self_div(mut nums: Vec<i32>) -> Vec<i32> {
-    let product = nums.iter().fold(1, |m, n| m * n);
+    let product: i32 = nums.iter().product();
     for num in nums.iter_mut() {
         *num = product / *num;
     }

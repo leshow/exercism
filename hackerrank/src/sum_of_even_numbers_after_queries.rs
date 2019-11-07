@@ -19,7 +19,7 @@
 
 pub fn sum_even_after_queries(mut a: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {
     let mut ret: Vec<i32> = Vec::with_capacity(queries.len());
-    for (i, query) in queries.into_iter().enumerate() {
+    for query in queries.into_iter() {
         a[query[1] as usize] += query[0];
         ret.push(a.iter().filter(|&&n| n % 2 == 0).sum::<i32>());
     }

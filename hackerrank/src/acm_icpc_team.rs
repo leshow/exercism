@@ -55,6 +55,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ```
 //
 fn get_topics(topics: Vec<String>, n: usize) -> Result<(usize, usize), Box<dyn Error>> {
+    use std::cmp::Ordering;
     let mut max_topics = 0;
     let mut total_max = 0;
 
@@ -63,11 +64,15 @@ fn get_topics(topics: Vec<String>, n: usize) -> Result<(usize, usize), Box<dyn E
             let one = usize::from_str_radix(&topics[i], 2)?;
             let two = usize::from_str_radix(&topics[j], 2)?;
             let set_bits = count_set_bits(one | two);
-            if set_bits > max_topics {
-                max_topics = set_bits;
-                total_max = 1;
-            } else if set_bits == max_topics {
-                total_max += 1;
+            match set_bits.cmp(&max_topics) {
+                Ordering::Greater => {
+                    max_topics = set_bits;
+                    total_max = 1;
+                }
+                Ordering::Equal => {
+                    total_max += 1;
+                }
+                Ordering::Less => {}
             }
         }
     }

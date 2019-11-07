@@ -36,18 +36,8 @@ pub fn two_city_sched_rec(costs: Vec<Vec<i32>>) -> i32 {
 }
 
 pub fn two_city_sched_cost(costs: Vec<Vec<i32>>) -> i32 {
-    use std::cmp::Ordering as Ord;
     let mut costs = costs;
-    costs.sort_by(|a, b| {
-        let diff = (a[1] - a[0]) - (b[1] - b[0]);
-        if diff < 0 {
-            Ord::Less
-        } else if diff > 0 {
-            Ord::Greater
-        } else {
-            Ord::Equal
-        }
-    });
+    costs.sort_by(|a, b| (a[1] - a[0]).cmp(&(b[1] - b[0])));
     let mid = costs.len() >> 1;
     let suma: i32 = costs[..mid].iter().map(|c| c[1]).sum();
     let sumb: i32 = costs[mid..].iter().map(|c| c[0]).sum();

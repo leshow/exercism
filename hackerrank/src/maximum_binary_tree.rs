@@ -55,7 +55,7 @@ fn go(nums: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
     }
     let max = nums
         .iter()
-        .fold(i32::min_value(), |mut max, &v| cmp::max(max, v));
+        .fold(i32::min_value(), |max, &v| cmp::max(max, v));
     let i = nums.iter().position(|&x| x == max).unwrap();
     let mut node = TreeNode::new(nums[i]);
     node.left = go(&nums[..i]);

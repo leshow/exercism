@@ -11,7 +11,7 @@
 
 // naive:
 pub fn min_window_naive(s: String, t: String) -> String {
-    use std::{cmp, collections::HashMap};
+    use std::collections::HashMap;
     let mut min_len = usize::max_value();
     let mut min = "".into();
     let k = t.len();

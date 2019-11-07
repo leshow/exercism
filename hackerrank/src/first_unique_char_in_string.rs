@@ -20,10 +20,10 @@ pub fn first_uniq_char(s: String) -> i32 {
         map
     });
 
-    for i in 0..s.len() {
-        if let Some(&count) = map.get(&s[i]) {
+    for i in s.iter() {
+        if let Some(&count) = map.get(i) {
             if count == 1 {
-                return i as i32;
+                return *i as i32;
             }
         }
     }

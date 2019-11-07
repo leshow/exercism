@@ -70,7 +70,7 @@ pub fn find_restaurant(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {
     use std::collections::HashMap;
     let mut map = HashMap::new();
     for (i, item) in list1.iter().enumerate() {
-        map.entry(item).or_insert(Found::new(item, i));
+        map.entry(item).or_insert_with(|| Found::new(item, i));
     }
 
     for (i, item) in list2.iter().enumerate() {
