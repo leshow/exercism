@@ -19,6 +19,7 @@ mod comb_sum_iv;
 mod combination_sum;
 mod combination_sum_iii;
 mod combinations;
+mod combinations_ii;
 mod compare_strings_by_freq_of_smallest_char;
 mod counting_bits;
 mod daily_temperatures;
