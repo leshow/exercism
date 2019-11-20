@@ -35,6 +35,7 @@ mod find_the_duplicate;
 mod first_unique_char_in_string;
 mod goat_latin;
 mod hamming_distance;
+mod how_many_numbers_iii;
 mod insert_bst;
 mod intersection_of_two_arrays_ii;
 mod is_subsequence;
