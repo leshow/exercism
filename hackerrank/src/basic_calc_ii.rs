@@ -1,13 +1,11 @@
 // https://leetcode.com/problems/basic-calculator-ii/
-impl Solution {
-    pub fn calculate(s: String) -> i32 {
-              unimplemented! 
-    }
+pub fn calculate(s: String) -> i32 {
+    unimplemented!();
 }
 
 use std::iter::Peekable;
 
-fn lex(i: &String) -> Result<Vec<Token>, String> {
+fn lex(i: &str) -> Result<Vec<Token>, String> {
     let mut res = Vec::new();
     let mut it = i.chars().peekable();
     while let Some(&c) = it.peek() {
@@ -34,31 +32,55 @@ fn lex(i: &String) -> Result<Vec<Token>, String> {
             '0'..='9' => {
                 res.push(lex_num(c, &mut it)?);
             }
-            _ => return Err(format!("Can't parse token {}", c))
+            _ => return Err(format!("Can't parse token {}", c)),
         }
     }
-    res
+    Ok(res)
 }
 
-fn lex_num(c: &char, it: &mut Peekable<T>) -> Result<Token, String> {
-    let mut n = c.to_digit(10)?;
-    while let Some(&p) = it.peek() {
-        n = n * 10 + p.to_digit();
-        iter.next();
+fn lex_num<T: Iterator<Item = char>>(c: char, it: &mut Peekable<T>) -> Result<Token, String> {
+    // let mut n = c.to_digit(10).ok_or_else(|| "Cant convert to digit")?;
+    let mut n = 0;
+    while let Some(p) = it.peek().and_then(|p| p.to_digit(10)) {
+        n = n * 10 + p;
+        it.next();
     }
-    Ok(Token::Num(n))
+    Ok(Token::Num(n as i32))
 }
 
-
+#[derive(Debug, PartialEq, PartialOrd)]
 enum Token {
-    Add, Sum, Mul, Div, Num(i32)
+    Add,
+    Sub,
+    Mul,
+    Div,
+    Num(i32),
 }
 
+#[derive(Debug, PartialEq, PartialOrd)]
 enum Expr {
-    Num(i32), Mul(Box<Expr>, Box<Expr>), Add(Box<Expr>, Box<Expr>), Sub(Box<Expr>, Box<Expr>), 
-    Div(Box<Expr>, Box<Expr>)
+    Num(i32),
+    Mul(Box<Expr>, Box<Expr>),
+    Add(Box<Expr>, Box<Expr>),
+    Sub(Box<Expr>, Box<Expr>),
+    Div(Box<Expr>, Box<Expr>),
 }
 
-fn parse(tokens: &[Token]) -> Expr {
-    match 
+fn parse(tokens: &[Token]) -> Result<(Expr, usize), String> {
+    unimplemented!()
+}
+
+#[test]
+fn test_lex() {
+    let v = lex("2 + 2 * 4").expect("failed to unwrap");
+    let res = vec![
+        Token::Num(2),
+        Token::Add,
+        Token::Num(2),
+        Token::Mul,
+        Token::Num(4),
+    ];
+    for (token, r) in v.into_iter().zip(res.into_iter()) {
+        assert_eq!(token, r);
+    }
 }

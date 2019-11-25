@@ -8,6 +8,7 @@ mod asteroid_collision;
 mod available_captures;
 mod base_neg2;
 mod baseball_game_solution;
+mod basic_calc_ii;
 mod binary_gap;
 mod binary_search;
 mod binary_strings;
@@ -46,6 +47,7 @@ mod judge_circle;
 mod jumping_on_clouds;
 mod l4sum;
 mod largest_triangle_area;
+mod leaf_similar_trees;
 mod letter_case_permutation;
 mod longest_common_subsequence;
 mod majority_elements;
@@ -98,3 +100,23 @@ mod unique_morse_code;
 mod univalued_binary_tree;
 mod valid_anagram;
 mod valid_tic_tac_toe;
+
+use std::{cell::RefCell, rc::Rc};
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        TreeNode {
+            val,
+            left: None,
+            right: None,
+        }
+    }
+}
