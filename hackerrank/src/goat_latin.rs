@@ -1,4 +1,4 @@
-pub fn to_goat_latin(mut s: String) -> String {
+pub fn to_goat_latin(s: String) -> String {
     use std::iter;
     let mut r = s
         .split(' ')

@@ -80,6 +80,7 @@ mod ransom_note;
 mod relative_sorted_array;
 mod remove_all_adjacent_dupes_in_string_ii;
 mod remove_all_duplicates_in_string;
+mod reshape_the_matrix;
 mod reverse_integer;
 mod reverse_only_letters;
 mod rotate_string;

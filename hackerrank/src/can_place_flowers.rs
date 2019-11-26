@@ -15,7 +15,6 @@
 
 pub fn can_place_flowers(mut flowerbed: Vec<i32>, n: i32) -> bool {
     let mut n = n;
-    let mut adj = false;
     for i in 0..flowerbed.len() {
         let bed = flowerbed[i];
         if bed == 0

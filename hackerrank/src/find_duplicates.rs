@@ -58,5 +58,5 @@ fn test_combine() {
         ],
         1,
     );
-    let result = combine(&f, HashMap::new());
+    let _result = combine(&f, HashMap::new());
 }
