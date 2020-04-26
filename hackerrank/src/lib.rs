@@ -94,6 +94,7 @@ mod single_number;
 mod sock_merchant;
 mod sort_char_by_frequency;
 mod square_digits;
+mod strsplit;
 mod sub_k_diff;
 mod sum_of_distances;
 mod top_k_freq;
