@@ -45,5 +45,6 @@ pub fn daily_temperatures(t: Vec<i32>) -> Vec<i32> {
             *stack.back().unwrap() - i
         } as i32);
         stack.push_back(i);
-    }    ret.into_iter().rev().collect::<Vec<_>>()
+    }
+    ret.into_iter().rev().collect::<Vec<_>>()
 }
