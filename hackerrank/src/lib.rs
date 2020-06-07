@@ -27,6 +27,7 @@ mod compare_strings_by_freq_of_smallest_char;
 mod counting_bits;
 mod daily_temperatures;
 mod delete_columns;
+mod dep_tree;
 mod different_ways_parentheses;
 mod directionreduction;
 mod distance_between_bus_stops;

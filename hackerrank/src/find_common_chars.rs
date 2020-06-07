@@ -23,7 +23,7 @@ fn common_chars(arr: Vec<String>) -> Vec<char> {
     for s in &arr {
         let mut common = [0; 26];
         for c in s.chars() {
-            let pos = (c as u8 - 'a' as u8) as usize;
+            let pos = (c as u8 - b'a') as usize;
             common[pos] += 1;
         }
         ret.push(common);
@@ -34,7 +34,7 @@ fn common_chars(arr: Vec<String>) -> Vec<char> {
         for alphas in &ret {
             min = cmp::min(min, alphas[i]);
         }
-        (0..min).for_each(|_| r.push((i as u8 + 'a' as u8) as char));
+        (0..min).for_each(|_| r.push((i as u8 + b'a') as char));
     }
     r
 }

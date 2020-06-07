@@ -42,6 +42,7 @@ impl Distance<Mile> {
 }
 
 #[test]
+#[allow(clippy::float_cmp)]
 fn test() {
     let km = Distance::new_km(2.);
     // fails to compile:

@@ -4,9 +4,9 @@ pub fn uncommon_from_sentences(a: String, b: String) -> Vec<String> {
         .split(' ')
         .chain(b.split(' '))
         .fold(HashMap::new(), |mut map, word| {
-            *map.entry(word.clone()).or_insert(0) += 1;
+            *map.entry(word.to_string()).or_insert(0) += 1;
             map
         });
-    words_a.retain(|word, count| *count <= 1);
+    words_a.retain(|_, count| *count <= 1);
     words_a.keys().map(|s| s.to_string()).collect::<Vec<_>>()
 }

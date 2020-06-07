@@ -32,7 +32,7 @@ pub fn unique_morse_representations(words: Vec<String>) -> i32 {
         .into_iter()
         .map(|word| {
             word.chars()
-                .map(|c| alphas[(c as u8 - 'a' as u8) as usize])
+                .map(|c| alphas[(c as u8 - b'a') as usize])
                 .collect::<Vec<_>>()
                 .join("")
         })

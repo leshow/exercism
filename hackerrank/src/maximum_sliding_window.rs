@@ -55,17 +55,17 @@ pub fn max_sliding_window_queue(nums: Vec<i32>, k: i32) -> Vec<i32> {
                 (q, cmp::max(n, max))
             });
     let mut res = Vec::new();
-    for i in k..nums.len() {
+    for &num in &nums[k..] {
         res.push(max);
-        if nums[i] > max {
-            max = nums[i];
+        if num > max {
+            max = num;
             q = VecDeque::new();
-            q.push_back(nums[i]);
+            q.push_back(num);
         } else if q.len() < k {
-            q.push_back(nums[i]);
+            q.push_back(num);
         } else {
             let el = q.pop_front().unwrap();
-            q.push_back(nums[i]);
+            q.push_back(num);
             if el == max {
                 max = q.iter().fold(i32::min_value(), |a, &b| cmp::max(a, b));
             }
