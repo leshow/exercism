@@ -1,70 +1,70 @@
 pub fn solve_n_queens(n: i32) -> Vec<Vec<String>> {
-    let n = n as usize;
+    // initial board
+    let mut board: Vec<Vec<char>> = (0..n).map(|_| (0..n).map(|_| '.').collect()).collect();
+    // return value
     let mut ret = Vec::new();
-    let mut board = (0..n)
-        .map(|_| (0..n).map(|_| '.').collect::<Vec<_>>())
-        .collect::<Vec<_>>();
-    solve(&mut board, n, 0, &mut ret);
+    // backtracing recursively
+    fn rec(board: &mut [Vec<char>], ret: &mut Vec<Vec<String>>, col: usize) -> bool {
+        let n = board.len();
+        if col >= n {
+            let board = board.iter().map(|row| row.iter().collect()).collect();
+            ret.push(board);
+            return true;
+        }
+        let mut res = false;
+        for i in 0..n {
+            if safe(&board, i, col) {
+                board[i][col] = 'Q';
+                res = rec(board, ret, col + 1) || res;
+                board[i][col] = '.';
+            }
+        }
+        res
+    }
+
+    // determine if board is safe
+    fn safe(board: &[Vec<char>], i: usize, j: usize) -> bool {
+        let n = board.len();
+        for y in 0..j {
+            if board[i][y] != '.' {
+                return false;
+            }
+        }
+        for (x, y) in (0..=i).rev().zip((0..=j).rev()) {
+            if board[x][y] != '.' {
+                return false;
+            }
+        }
+        for (x, y) in (i..n).zip((0..=j).rev()) {
+            if board[x][y] != '.' {
+                return false;
+            }
+        }
+        true
+    }
+
+    if !rec(&mut board, &mut ret, 0) {
+        return vec![];
+    }
     ret
 }
 
-fn solve(board: &mut Vec<Vec<char>>, n: usize, col: usize, ret: &mut Vec<Vec<String>>) -> bool {
-    if col >= n {
-        let new_board = board.iter().map(|r| r.iter().collect()).collect::<Vec<_>>();
-        ret.push(new_board);
-        return true;
-    }
-    let mut res = false;
-    for row in 0..n {
-        if safe(board, row, col) {
-            board[row][col] = 'Q';
-            res = solve(board, n, col + 1, ret) || res;
-            board[row][col] = '.';
-        }
-    }
-    res
-}
-
-fn safe(board: &[Vec<char>], row: usize, col: usize) -> bool {
-    for i in 0..col {
-        if board[row][i] == 'Q' {
-            return false;
-        }
-    }
-    let mut i = row;
-    let mut j = col;
-    while i > 0 && j > 0 {
-        if board[i][j] == 'Q' {
-            return false;
-        }
-        i -= 1;
-        j -= 1;
-    }
-    i = row;
-    j = col;
-    while i < board.len() && j > 0 {
-        if board[i][j] == 'Q' {
-            return false;
-        }
-        i += 1;
-        j -= 1;
-    }
-    true
-}
 #[test]
-fn test_safe() {
-    let b1 = vec![
-        "..Q.".chars().collect(),
-        "Q...".chars().collect(),
-        ".Q..".chars().collect(),
-        "...Q".chars().collect(),
+fn test_queens() {
+    let ret = solve_n_queens(4);
+    let res = vec![
+        vec![
+            "..Q.".to_string(),
+            "Q...".to_string(),
+            "...Q".to_string(),
+            ".Q..".to_string(),
+        ],
+        vec![
+            ".Q..".to_string(),
+            "...Q".to_string(),
+            "Q...".to_string(),
+            "..Q.".to_string(),
+        ],
     ];
-    // let b3 = vec![
-    //     ".Q..".chars().collect(),
-    //     "..Q.".chars().collect(),
-    //     "Q...".chars().collect(),
-    //     "...Q".chars().collect(),
-    // ];
-    assert!(!safe(&b1, 2, 1));
-    // assert!(safe(&b3, 1, 2));
+    assert!(ret.eq(&res));
 }
